@@ -22,14 +22,6 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      # Temporary: prints the identity GitHub presents to AWS. Remove once the role works.
-      - name: Debug OIDC subject
-        run: |
-          curl -sS -H "Authorization: bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" \
-            "$ACTIONS_ID_TOKEN_REQUEST_URL&audience=sts.amazonaws.com" \
-            | jq -r .value \
-            | jq -R 'split(".")[1] | gsub("-";"+") | gsub("_";"/") | @base64d | fromjson | {sub, aud, repository, ref}'
-
       - name: Configure AWS credentials (OIDC)
         uses: aws-actions/configure-aws-credentials@v4
         with:
