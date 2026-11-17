@@ -1,17 +1,21 @@
 import type { Metadata } from 'next'
-import { Source_Sans_3, Source_Serif_4 } from 'next/font/google'
+import localFont from 'next/font/local'
 import SiteHeader from '@/components/SiteHeader'
 import './globals.css'
 
-const sans = Source_Sans_3({
-  subsets: ['latin'],
-  weight: ['400', '600'],
+// Fonts are self-hosted (Latin subset of Source Sans 3 / Source Serif 4 from
+// Google Fonts) so the build doesn't depend on reaching Google Fonts.
+const sans = localFont({
+  src: './fonts/SourceSans3-latin.woff2',
+  weight: '400 600',
+  display: 'swap',
   variable: '--font-sans',
 })
 
-const serif = Source_Serif_4({
-  subsets: ['latin'],
-  weight: ['600'],
+const serif = localFont({
+  src: './fonts/SourceSerif4-latin.woff2',
+  weight: '600',
+  display: 'swap',
   variable: '--font-serif',
 })
 
