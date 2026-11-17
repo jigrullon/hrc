@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import FacebookLink from '@/components/FacebookLink'
 
 export default function Home() {
@@ -17,8 +18,7 @@ export default function Home() {
           Mission &amp; Vision
         </h1>
         <p className="text-lg leading-relaxed text-bark">
-          We are building a space for homeschool families in Camden County, GA. Although we do not
-          have a physical building, we will be hosting events throughout the year.
+          We are building a space for homeschool families in Camden County, GA.
         </p>
         <p className="text-lg leading-relaxed text-bark">
           We envision a thriving homeschool community where families are supported, students are
@@ -28,6 +28,23 @@ export default function Home() {
         <p className="text-lg leading-relaxed text-bark">
           Our mission is to equip and encourage homeschool families through Christ-centered
           resources, meaningful community, and opportunities to learn, grow, and thrive together.
+        </p>
+        <p className="text-lg leading-relaxed text-bark">
+          Check out our upcoming{' '}
+          <Link
+            href="/events/"
+            className="font-semibold text-leaf underline underline-offset-2 hover:text-navy"
+          >
+            events
+          </Link>{' '}
+          or{' '}
+          <Link
+            href="/support-us/"
+            className="font-semibold text-leaf underline underline-offset-2 hover:text-navy"
+          >
+            donate now
+          </Link>
+          .
         </p>
 
       </div>
