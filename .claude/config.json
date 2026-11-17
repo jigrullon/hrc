@@ -1,6 +1,6 @@
 {
   "project_name": "PROJECT_NAME",
-  "skills_path": "~/claude-code/skills",
+  "skills_path": "/Users/jaimegrullon/claude-code/skills",
   "memory_path": "./.claude/memory",
   "auto_suggest_skills": true,
   "hot_memory_days": 30,
